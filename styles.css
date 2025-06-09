@@ -1,0 +1,209 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #121212;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Chat Logo Section */
+.chat-logo {
+  background: #272727;
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.chat-logo img {
+  height: 90px;
+  width: 90px;
+  object-fit: cover;
+  border: 2px solid #0a84ff;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.chat-logo h1 {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  background: linear-gradient(135deg, #0a84ff, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(10, 132, 255, 0.2);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.chat-logo h1:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(10, 132, 255, 0.5);
+}
+
+/* Main Chat Container */
+.chat-container {
+  width: 95%;
+  max-width: 1400px;
+  min-width: 320px;
+  height: 85vh;
+  background: #1f1f1f;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  border: 2px solid;
+  border-radius: 20px;
+  border-color: #0a84ff;
+}
+
+/* Messages Area */
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #555 transparent;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* Message Bubbles */
+.message {
+  max-width: 75%;
+  margin-bottom: 15px;
+  padding: 14px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.message.user {
+  background: #0a84ff;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.message.ai {
+  background: #2a2a2a;
+  color: #eee;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+/* Input Form */
+.chat-input {
+  display: flex;
+  padding: 15px 20px;
+  background: #272727;
+  border-top: 1px solid #333;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  background: #1f1f1f;
+  color: white;
+  outline: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.chat-input input::placeholder {
+  color: #777;
+}
+
+.chat-input input:focus {
+  background: #292929;
+  transform: scale(1.02);
+}
+
+/* Send Button */
+.chat-input button {
+  background: linear-gradient(135deg, #0a84ff, #4facfe);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(10, 132, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-input button:hover {
+  background: linear-gradient(135deg, #4facfe, #0a84ff);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(10, 132, 255, 0.4);
+}
+
+.chat-input button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(10, 132, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 100%;
+    height: 95vh;
+    border-radius: 20px;
+    border-color: #0a84ff;
+  }
+
+  .message {
+    max-width: 90%;
+    font-size: 0.95rem;
+  }
+
+  .chat-logo {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .chat-logo img {
+    height: 70px;
+    width: 70px;
+  }
+
+  .chat-input {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .chat-input button {
+    width: 100%;
+  }
+}

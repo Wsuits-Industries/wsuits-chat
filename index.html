@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Chat Interface</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="chat-container">
+    
+    <!-- Logo section inside the container -->
+    <div class="chat-logo">
+      <img src="wsuits-logo.webp" alt="WSuits Chat Logo" />
+      <!-- Optional: add text -->
+      <h1>WSUITS CHAT</h1>
+      <!-- <h1>WSuits Chat</h1> -->
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <!-- Chat messages will appear here -->
+    </div>
+
+    <form id="chatForm" class="chat-input" autocomplete="off">
+      <input type="text" id="userInput" placeholder="Type your message here..." required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>
