@@ -42,11 +42,14 @@ html, body {
   font-weight: 700;
   font-size: clamp(1.8rem, 5vw, 3rem);
   background: linear-gradient(135deg, #0a84ff, #4facfe);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent; /* fallback */
   text-shadow: 0 0 10px rgba(10, 132, 255, 0.2);
   transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
+
 
 .chat-logo h1:hover {
   transform: scale(1.05);
@@ -207,3 +210,22 @@ html, body {
     width: 100%;
   }
 }
+/*Message Bubble Styles*/
+.message-bubble {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    align-self: flex-start; /* Default: align left */
+}
+
+/* For received messages */
+.message-bubble.user {
+    align-self: flex-end; /* Push to the right */
+    background-color: #e5e5ea;
+    color: #000;
+}
+
